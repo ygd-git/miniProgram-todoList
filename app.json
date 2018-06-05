@@ -6,7 +6,7 @@
   "window": {
     "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "小程序",
+    "navigationBarTitleText": "代办项",
     "backgroundColor": "#555555",
     "backgroundTextStyle": "light",
     "enablePullDownRefresh": false

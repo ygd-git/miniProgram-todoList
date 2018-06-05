@@ -2,7 +2,7 @@
 <import src="../common/header.wxml" />
 
 <view class='container'>
-  <template is="head" data="{{tip: '可以在首页添加代办项'}}" />
+  <template is="head" data="{{tip: '识别多项-换行输入或者1.xxx2.xxx'}}" />
 
   <!-- 添加代办项部分  -->
   <view class='page-section'>
@@ -10,7 +10,7 @@
       <textarea placeholder='代办项内容' show-confirm-bar='true' focus='true' value='{{textareaValue}}' bindinput='textareaInput'></textarea>
       <view class='button-hor-area'>
         <button type='primary' bindtap='tapAddOneTodo' disabled='{{!textareaValue}}'>添加</button>
-        <button disabled='{{!textareaValue}}'>智能添加多项</button>
+        <button disabled='{{!textareaValue}}' bindtap='tapAddMulti'>智能添加多项</button>
       </view>
     </form>
 

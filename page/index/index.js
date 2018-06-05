@@ -1,5 +1,6 @@
 // page/index/index.js
 let app = getApp();
+let util = require('../../util/util.js');
 
 Page({
 
@@ -46,6 +47,40 @@ Page({
   },
 
   /**
+   * 智能添加多项
+   */
+  tapAddMulti: function () {
+    let rst =  util.multiTermSplit(this.data.textareaValue);
+    let that = this;
+
+    if(rst.length>0){
+      wx.showModal({
+        title: '识别结果',
+        content: `共${rst.length}条代办项,确认添加?`,
+        success: function(e){
+          if(e.confirm){
+            let items = that.data.todoItems;
+
+            rst.forEach(item=>{
+              items.push({
+                value: app.addTodoItem(),
+                name: item,
+              });
+            })
+
+            that.setData({
+              todoItems: items,
+              textareaValue: ''
+            })
+          }else{
+            // console.log('取消')
+          }
+        }
+      })
+    }
+  },
+
+  /**
   * 确认完成,可以回收
   */
   tapConfirmFinish: function () {
@@ -54,7 +89,11 @@ Page({
       content: '已回收的可以在已做菜单查看',
       success: function (e) {
         if (e.confirm) {
-          
+          wx.showLoading({
+            title: '明天弄',
+          })
+
+          setTimeout(()=>wx.hideLoading(),1000)
         } else {
           console.log('取消')
         }
@@ -75,7 +114,7 @@ Page({
       item.checked = chooseItems.includes(item.value+'');      
     });
 
-    console.log(todoItems)
+    // console.log(todoItems)
 
     this.setData({
       todoItems
@@ -93,7 +132,7 @@ Page({
     this.setData({
       type
     })
-    console.log(this.data.type);
+    // console.log(this.data.type);
   },
 
   /**
@@ -114,13 +153,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    console.log('index', this.data.type);
+    // console.log('index', this.data.type);
     // let todoItems = app.globalData.todoItems;
 
     // this.setData({
     //   todoItems: todoItems.filter((x) => !x.finished)
     // })
-    // console.log(this.data)
+    // console.log('')
   },
 
   /**

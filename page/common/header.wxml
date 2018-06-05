@@ -1,0 +1,9 @@
+<template name="head">
+  <view class='page-head'>
+    <view class='page-head-tip'>
+      提示:{{tip}}
+    </view>
+    <view class='page-head-hr'></view>
+    
+  </view>
+</template>

@@ -1,0 +1,30 @@
+{
+  "pages": [
+    "page/index/index",
+    "page/trash/trash"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "小程序",
+    "backgroundColor": "#555555",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "page/index/index",
+        "text": "首页",
+        "iconPath": "img/icon_index.png",
+        "selectedIconPath": "img/icon_index_HL.png"
+      },
+      {
+        "pagePath": "page/trash/trash",
+        "text": "已做",
+        "iconPath": "img/icon_trash.png",
+        "selectedIconPath": "img/icon_trash_HL.png"
+      }
+    ]
+  }
+}

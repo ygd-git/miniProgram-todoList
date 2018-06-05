@@ -1,0 +1,49 @@
+page{
+  display: flex;
+  height: 100%;
+  /* overflow-x: hidden; */
+  flex-direction: column;
+  align-content: space-between;
+}
+
+.page-section{
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;  
+  /* box-sizing: border-box; */
+  padding: 0 20rpx;
+}
+.page-section:last-child{
+  margin-bottom: 30rpx;
+}
+.page-section-title{
+  font-size: 30rpx;
+  color: #bbbbbb;
+}
+.bottom-right-corner{
+   position: fixed; 
+   right: 0; 
+   bottom: 0; 
+   max-width: 190rpx;  
+   padding: 10rpx;
+   /* height: 300rpx; */
+  /* margin-top: -150px; */
+   background-color: rgba(240, 240, 240, .3); 
+   z-index: 2;
+}
+
+/*  header 头部模板  */
+.page-head{
+  background-color: rgba(15, 207, 15, .5);
+  
+  /* background-color: #0fcf0f; */
+  /* height: 300rpx; */
+}
+.page-head-tip{
+  text-align: center;
+  /* color: #9f0f9f; */
+}
+.page-head-hr{
+  margin: 30rpx auto;
+  width: 70%;
+  border-bottom: 1rpx dashed #9f0f0f ;
+}

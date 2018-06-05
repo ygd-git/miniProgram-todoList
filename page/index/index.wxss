@@ -1,0 +1,66 @@
+/* page/index/index.wxss */
+
+.container .page-section textarea {
+  border: 2px solid #ccc;
+  border-radius: 15rpx;
+  /* text-indent: 15rpx; 手机上预览text-index不生效 只好用padding了*/
+  box-sizing: border-box;
+  padding: 7.5px;
+  height: 300rpx;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container .page-section .button-hor-area {
+  margin-top: 30rpx;
+  display: flex;
+}
+
+.container .page-section .button-hor-area button:first-child {
+  flex: 1;
+  margin-right: 30rpx;
+}
+
+.todolist {
+  display: flex;
+  flex-direction: column;
+}
+
+.todolist checkbox {
+  margin: 5rpx 0;
+  /* opacity: 0.4; */
+}
+
+.todolist checkbox[checked] {
+  opacity: 0.4;
+  transition: opacity 1s;
+}
+
+.todolist .checkbox-hide {
+  display: none;
+}
+
+.bottom-right-corner button {
+  width: 100%;
+}
+
+.bottom-right-corner #button-action-finish {
+  margin-bottom: 10rpx;
+}
+
+.bottom-right-corner .button-hover {
+  background-color: #999;
+  /* border-color: #56FF0B; */
+}
+
+/* .bottom-right-corner #button-type-finished{
+  background-color: #73B82B;
+}
+.bottom-right-corner #button-type-unfinished{
+  background-color: #FFBC06;
+}  */
+
+.bottom-right-corner .divide {
+  text-align: center;
+  color: #ccc;
+}

@@ -1,0 +1,55 @@
+<!--page/index/index.wxml-->
+<import src="../common/header.wxml" />
+
+<view class='container'>
+  <template is="head" data="{{tip: '可以在首页添加代办项'}}" />
+
+  <!-- 添加代办项部分  -->
+  <view class='page-section'>
+    <form bindsubmit='formSubmit' bindconfirm='formConfirm'>
+      <textarea placeholder='代办项内容' show-confirm-bar='true' focus='true' value='{{textareaValue}}' bindinput='textareaInput'></textarea>
+      <view class='button-hor-area'>
+        <button type='primary' bindtap='tapAddOneTodo' disabled='{{!textareaValue}}'>添加</button>
+        <button disabled='{{!textareaValue}}'>智能添加多项</button>
+      </view>
+    </form>
+
+  </view>
+
+  <!-- 代办项数量提醒等部分  -->
+  <view class='page-section'>
+    <view class='page-section-title'>
+      <text wx:if='{{todoItems.length}}'>
+        你有{{todoItems.length}}个代办项,右下角按钮可以回收完成项和分类
+      </text>
+      <text wx:if='{{!todoItems.length}}'>
+        你现在没有代办项,试试在上面输入内容并点击添加按钮
+      </text>
+    </view>
+  </view>
+
+  <!-- 代办项checkbox 部分 -->
+  <view class='page-section'>
+    <view></view>
+    <view class='todolist'>
+      <checkbox-group bindchange='checkboxChange'>
+          <label wx:for='{{todoItems}}' wx:key='{{item.value}}' >
+          <view wx:if='{{(item.checked && type!="unfinished") || (!item.checked && type!="finished")}}'>
+            <checkbox value='{{item.value}}' checked='{{item.checked}}'>{{item.name}} </checkbox>          
+          </view>
+          </label>
+      </checkbox-group>
+    </view>
+  </view>
+
+  <!-- 右下角分类按钮 部分-->
+  <view class='bottom-right-corner'>
+    <button size='mini' type='primary' id='button-action-finish' bindtap='tapConfirmFinish'>回收</button>
+    <view class='divide'>
+      -分类-
+    </view>
+    <button size='mini' plain='{{type == "all"}}' id='button-type-all' bindtap='tapType'>全部</button>
+    <button size='mini' plain='{{type == "finished"}}' id='button-type-finished' bindtap='tapType'>已完成</button>
+    <button size='mini' plain='{{type == "unfinished"}}' id='button-type-unfinished' bindtap='tapType'>未完成</button>
+  </view>
+</view>
